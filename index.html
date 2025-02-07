@@ -44,6 +44,15 @@
             border-radius: 10px;
             margin-top: 20px;
         }
+        #flowers {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+        }
+
+#flowers.show {
+    opacity: 1;
+        }
+    
     </style>
 </head>
 <body>
@@ -81,9 +90,13 @@
         }
 
         function showFlowers() {
-            document.querySelector(".buttons").style.display = "none";
-            document.getElementById("flowers").classList.remove("hidden");
-        }
+    document.querySelector(".buttons").style.display = "none";
+    let flowersDiv = document.getElementById("flowers");
+    flowersDiv.classList.remove("hidden");
+    setTimeout(() => {
+        flowersDiv.classList.add("show");
+    }, 100); 
+}
     </script>
 </body>
 </html>
